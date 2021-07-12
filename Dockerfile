@@ -19,13 +19,6 @@ RUN apt update && apt install -y \
 ARG ide
 # e.g. stm32cubeide_1.4.0
 
-# Convenience variables
-ARG stm_repo=/usr/local/share/stm_repo
-
 # Copy ide
 RUN mkdir -p /opt/st
 COPY $ide /opt/st/$ide
-
-# Backwards compatibility for linux-only FW path.
-# Will eventually deprecate.
-#RUN ln -s $stm_repo /usr/share/stm_repo
