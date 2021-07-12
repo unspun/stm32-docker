@@ -19,7 +19,7 @@ ide=stm32cubeide_1.6.1
 ide_versionless=stm32cubeide
 
 # default directory permissions don't allow re-writing into some directories
-rm -rf $ide_versionless $fw
+rm -rf $ide_versionless
 
 # Copy large file inputs locally.
 # Unfortunately, we can't just symlink to these,
@@ -30,6 +30,6 @@ cp -r /opt/st/$ide $ide_versionless
 docker build --build-arg ide=$ide_versionless .
 #
 # Push to dockerhub by tagging the resulting image, e.g.:
-#   docker tag <img> unspun/stm32cubeide1.6.1:F4_V1.25.1
+#   docker tag <img> unspun/stm32cubeide1.6.1
 # Then upload:
-#   docker push unspun/stm32cubeide1.6.1:F4_V1.25.1
+#   docker push unspun/stm32cubeide1.6.1
